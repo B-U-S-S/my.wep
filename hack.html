@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>wellcome to hackers world</title>
+        <link rel="stylesheet" href="bb.css">
+    </head>
+    <body>
+        <h1>Do You Want To Be A Hacker..?</h1>
+        <h2>log in</h2>
+        <img src="6.jpg.jfif">
+        <br>
+        <h4>inter your informasion</h4>
+        <form id="hackerForm" onsubmit="submitForm(event)">
+            <label>your name:</label><br>
+            <input type="text" name="name" id="name">
+            <br>
+            <label>your age:</label><br>
+            <input type="number" name="age" id="age">
+            <br>
+            <label>your phone number:</label><br>
+            <input type="text" name="phone" id="phone">
+            <br>
+            <input type="submit" value="Submit">
+        </form>
+
+        <script>
+            function submitForm(event) {
+                event.preventDefault();
+                const formData = {
+                    name: document.getElementById('name').value,
+                    age: document.getElementById('age').value,
+                    phone: document.getElementById('phone').value
+                };
+                localStorage.setItem('hackerData', JSON.stringify(formData));
+                window.location.href = 'hh.html';
+            }
+        </script>
+    </body>
+</html>

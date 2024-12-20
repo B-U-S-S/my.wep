@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>wellcome</title>
+        <link rel="stylesheet" href="bb.css">
+    </head>
+    <body>
+        <h1>Hacker Information</h1>
+        <div id="hackerInfo">
+            <p>Name: <span id="displayName"></span></p>
+            <p>Age: <span id="displayAge"></span></p>
+            <p>Phone: <span id="displayPhone"></span></p>
+        </div>
+
+        <script>
+            window.onload = function() {
+                const hackerData = JSON.parse(localStorage.getItem('hackerData'));
+                if (hackerData) {
+                    document.getElementById('displayName').textContent = hackerData.name;
+                    document.getElementById('displayAge').textContent = hackerData.age;
+                    document.getElementById('displayPhone').textContent = hackerData.phone;
+                }
+            };
+        </script>
+    </body>
+</html>
